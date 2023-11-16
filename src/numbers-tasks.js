@@ -18,9 +18,7 @@
  *   5, 10 => 50
  *   5, 5  => 25
  */
-function getRectangleArea(/* width, height */) {
-  throw new Error('Not implemented');
-}
+const getRectangleArea = (width, height) => width * height;
 
 /**
  * Returns a circumference of circle given by radius.
@@ -33,9 +31,7 @@ function getRectangleArea(/* width, height */) {
  *   3.14 => 19.729201864543903
  *   0    => 0
  */
-function getCircleCircumference(/* radius */) {
-  throw new Error('Not implemented');
-}
+const getCircleCircumference = (radius) => 2 * Math.PI * radius;
 
 /**
  * Returns an average of two given numbers.
@@ -49,9 +45,11 @@ function getCircleCircumference(/* radius */) {
  *  10, 0  => 5
  *  -3, 3  => 0
  */
-function getAverage(/* value1, value2 */) {
+const getAverage = (/* value1, value2 */) => {
   throw new Error('Not implemented');
-}
+  // const sum = value1 + value2;
+  // return sum === 0 ? 0 : sum / 2;
+};
 
 /**
  * Returns a distance between two points by cartesian coordinates.
@@ -122,9 +120,7 @@ function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
  *     5     => 5
  *     0     => 0
  */
-function getLastDigit(/* value */) {
-  throw new Error('Not implemented');
-}
+const getLastDigit = (value) => value % 10;
 
 /**
  * Returns a number by given string representation.
@@ -137,9 +133,7 @@ function getLastDigit(/* value */) {
  *     '37'     => 37
  * '-525.5'     => -525.5
  */
-function parseNumberFromString(/* value */) {
-  throw new Error('Not implemented');
-}
+const parseNumberFromString = (value) => +value;
 
 /**
  * Returns a diagonal length of the rectangular parallelepiped given by its sides a,b,c.
@@ -230,9 +224,7 @@ function toNumber(/* value, def */) {
  *   -2 => -8
  *   0  => 0
  */
-function getCube(/* num */) {
-  throw new Error('Not implemented');
-}
+const getCube = (num) => num ** 3;
 
 /**
  * Returns the Fibonacci number located at the index position.
@@ -247,9 +239,11 @@ function getCube(/* num */) {
  *   3  => 2
  *   10 => 55
  */
-function getFibonacciNumber(/* index */) {
-  throw new Error('Not implemented');
-}
+const getFibonacciNumber = (index) => {
+  if (index === 0) return 0;
+  if (index === 1) return 1;
+  return getFibonacciNumber(index - 1) + getFibonacciNumber(index - 2);
+};
 
 /**
  * Returns the sum of all numbers from 1 to n.
@@ -262,9 +256,14 @@ function getFibonacciNumber(/* index */) {
  *   10 => 55 // (1+2+3+...+10)
  *   1  => 1
  */
-function getSumToN(/* n */) {
-  throw new Error('Not implemented');
-}
+// n * (n-1) / 2 + n
+// n * ((n-1) / 2 + 1)
+// n * (n/2 - 1/2 + 1)
+// n * (n/2 + 1/2)
+// n * ((n + 1) / 2)
+// n * (n + 1) / 2
+// (n ** 2 + n) / 2
+const getSumToN = (n) => (n * n + n) / 2;
 
 /**
  * Returns the sum of the digits of a given number.
@@ -321,9 +320,7 @@ function getSine(/* num */) {
  * 255, 16 => 'ff'
  * 2, 2    => '10'
  */
-function numberToStringInBase(/* number, base */) {
-  throw new Error('Not implemented');
-}
+const numberToStringInBase = (number, base) => number.toString(base);
 
 /**
  * Returns a string representation of a number in exponential notation.
@@ -335,9 +332,8 @@ function numberToStringInBase(/* number, base */) {
  * @example:
  * 12345, 2    => '1.23e+4'
  */
-function toExponential(/* number, fractionDigits */) {
-  throw new Error('Not implemented');
-}
+const toExponential = (number, fractionDigits) =>
+  number.toExponential(fractionDigits);
 
 /**
  * Returns a string representation of a number in fixed-point notation.
@@ -350,9 +346,7 @@ function toExponential(/* number, fractionDigits */) {
  * 12345, 2    => '12345.00'
  * 12.345, 1   => '12.3'
  */
-function toFixed(/* number, fractionDigits */) {
-  throw new Error('Not implemented');
-}
+const toFixed = (number, fractionDigits) => number.toFixed(fractionDigits);
 
 /**
  * Returns a string representation of a number in normal (fixed-point or exponential)
