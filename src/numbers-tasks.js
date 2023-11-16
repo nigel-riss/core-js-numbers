@@ -18,7 +18,9 @@
  *   5, 10 => 50
  *   5, 5  => 25
  */
-const getRectangleArea = (width, height) => width * height;
+function getRectangleArea(width, height) {
+  return width * height;
+}
 
 /**
  * Returns a circumference of circle given by radius.
@@ -31,7 +33,9 @@ const getRectangleArea = (width, height) => width * height;
  *   3.14 => 19.729201864543903
  *   0    => 0
  */
-const getCircleCircumference = (radius) => 2 * Math.PI * radius;
+function getCircleCircumference(radius) {
+  return 2 * Math.PI * radius;
+}
 
 /**
  * Returns an average of two given numbers.
@@ -45,7 +49,9 @@ const getCircleCircumference = (radius) => 2 * Math.PI * radius;
  *  10, 0  => 5
  *  -3, 3  => 0
  */
-const getAverage = (value1, value2) => value1 / 2 + value2 / 2;
+function getAverage(value1, value2) {
+  return value1 / 2 + value2 / 2;
+}
 
 /**
  * Returns a distance between two points by cartesian coordinates.
@@ -62,8 +68,9 @@ const getAverage = (value1, value2) => value1 / 2 + value2 / 2;
  *   (0,0) (1,0)    => 1
  *   (-5,0) (10,-10) => 18.027756377319946
  */
-const getDistanceBetweenPoints = (x1, y1, x2, y2) =>
-  Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
+function getDistanceBetweenPoints(x1, y1, x2, y2) {
+  return Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
+}
 
 /**
  * Returns a root of linear equation a*x + b = 0 given by coefficients a and b.
@@ -77,7 +84,9 @@ const getDistanceBetweenPoints = (x1, y1, x2, y2) =>
  *   x + 8 = 0       => -8
  *   5*x = 0         => 0
  */
-const getLinearEquationRoot = (a, b) => -b / a;
+function getLinearEquationRoot(a, b) {
+  return -b / a;
+}
 
 /**
  * Returns an angle (in radians) between two vectors given by xi and yi,
@@ -96,11 +105,11 @@ const getLinearEquationRoot = (a, b) => -b / a;
  *   (0,-1) (1,0)    => π/2
  *   (0,1) (0,1)     => 0
  */
-const getAngleBetweenVectors = (x1, y1, x2, y2) => {
+function getAngleBetweenVectors(x1, y1, x2, y2) {
   const v1Angle = Math.atan2(y1, x1);
   const v2Angle = Math.atan2(y2, x2);
   return Math.abs(v1Angle - v2Angle);
-};
+}
 
 /**
  * Returns a last digit of a integer number.
@@ -116,7 +125,9 @@ const getAngleBetweenVectors = (x1, y1, x2, y2) => {
  *     0     => 0
  */
 // const getLastDigit = (value) => value % 10; // <- This is an optimal solution
-const getLastDigit = (value) => value % 10;
+function getLastDigit(value) {
+  return value % 10;
+}
 
 /**
  * Returns a number by given string representation.
@@ -129,7 +140,9 @@ const getLastDigit = (value) => value % 10;
  *     '37'     => 37
  * '-525.5'     => -525.5
  */
-const parseNumberFromString = (value) => +value;
+function parseNumberFromString(value) {
+  return +value;
+}
 
 /**
  * Returns a diagonal length of the rectangular parallelepiped given by its sides a,b,c.
@@ -220,7 +233,9 @@ function toNumber(/* value, def */) {
  *   -2 => -8
  *   0  => 0
  */
-const getCube = (num) => num ** 3;
+function getCube(num) {
+  return num ** 3;
+}
 
 /**
  * Returns the Fibonacci number located at the index position.
@@ -235,11 +250,11 @@ const getCube = (num) => num ** 3;
  *   3  => 2
  *   10 => 55
  */
-const getFibonacciNumber = (index) => {
+function getFibonacciNumber(index) {
   if (index === 0) return 0;
   if (index === 1) return 1;
   return getFibonacciNumber(index - 1) + getFibonacciNumber(index - 2);
-};
+}
 
 /**
  * Returns the sum of all numbers from 1 to n.
@@ -259,7 +274,9 @@ const getFibonacciNumber = (index) => {
 // n * ((n + 1) / 2)
 // n * (n + 1) / 2
 // (n ** 2 + n) / 2
-const getSumToN = (n) => (n * n + n) / 2;
+function getSumToN(n) {
+  return (n * n + n) / 2;
+}
 
 /**
  * Returns the sum of the digits of a given number.
@@ -316,7 +333,9 @@ function getSine(/* num */) {
  * 255, 16 => 'ff'
  * 2, 2    => '10'
  */
-const numberToStringInBase = (number, base) => number.toString(base);
+function numberToStringInBase(number, base) {
+  return number.toString(base);
+}
 
 /**
  * Returns a string representation of a number in exponential notation.
@@ -328,8 +347,9 @@ const numberToStringInBase = (number, base) => number.toString(base);
  * @example:
  * 12345, 2    => '1.23e+4'
  */
-const toExponential = (number, fractionDigits) =>
-  number.toExponential(fractionDigits);
+function toExponential(number, fractionDigits) {
+  return number.toExponential(fractionDigits);
+}
 
 /**
  * Returns a string representation of a number in fixed-point notation.
@@ -342,7 +362,9 @@ const toExponential = (number, fractionDigits) =>
  * 12345, 2    => '12345.00'
  * 12.345, 1   => '12.3'
  */
-const toFixed = (number, fractionDigits) => number.toFixed(fractionDigits);
+function toFixed(number, fractionDigits) {
+  return number.toFixed(fractionDigits);
+}
 
 /**
  * Returns a string representation of a number in normal (fixed-point or exponential)
@@ -356,7 +378,9 @@ const toFixed = (number, fractionDigits) => number.toFixed(fractionDigits);
  * 12345, 7    => '12345.00'
  * 12.345, 4   => '12.35'
  */
-const toPrecision = (number, precision) => number.toPrecision(precision);
+function toPrecision(number, precision) {
+  return number.toPrecision(precision);
+}
 
 /**
  * Returns the primitive value of a Number object.
@@ -368,7 +392,9 @@ const toPrecision = (number, precision) => number.toPrecision(precision);
  * new Number(5) => 5
  * Number(-5)    => -5
  */
-const getNumberValue = (number) => number.valueOf();
+function getNumberValue(number) {
+  return number.valueOf();
+}
 
 /**
  * Returns a boolean value indicating whether the parameter is a number or not.
@@ -400,7 +426,9 @@ function isNumber(/* number */) {
  * 5.1  => false
  * '5'  => false
  */
-const isInteger = (number) => Number.isInteger(number);
+function isInteger(number) {
+  return Number.isInteger(number);
+}
 
 /**
  * Returns a floating point number or, if the number cannot be parsed from the argument, returns NaN.
@@ -412,7 +440,9 @@ const isInteger = (number) => Number.isInteger(number);
  * '4.567abcdefgh' => 4.567
  * 'abcdefgh'      => NaN
  */
-const getFloatOnString = (str) => Number.parseFloat(str);
+function getFloatOnString(str) {
+  return Number.parseFloat(str);
+}
 
 /**
  * Returns an integer of the specified base or, if the number cannot be parsed
@@ -428,7 +458,9 @@ const getFloatOnString = (str) => Number.parseFloat(str);
  * '1.234', 2           => 1
  * '10', 8              => 8
  */
-const getIntegerOnString = (str, base) => Number.parseInt(str, base);
+function getIntegerOnString(str, base) {
+  return Number.parseInt(str, base);
+}
 
 /**
  * Returns whether a number is a safe integer.
@@ -441,7 +473,9 @@ const getIntegerOnString = (str, base) => Number.parseInt(str, base);
  * 3.5      => false
  * 2 ** 53  => false
  */
-const isSafeInteger = (number) => Number.isSafeInteger(number);
+function isSafeInteger(number) {
+  return Number.isSafeInteger(number);
+}
 
 /**
  * Returns the smallest integer less than or equal to a given number.
@@ -453,7 +487,9 @@ const isSafeInteger = (number) => Number.isSafeInteger(number);
  * 5.9  => 5
  * -5.1 => -6
  */
-const roundToSmallestInteger = (number) => Math.floor(number);
+function roundToSmallestInteger(number) {
+  return Math.floor(number);
+}
 
 /**
  * Returns the largest integer greater than or equal to a given number.
@@ -465,7 +501,9 @@ const roundToSmallestInteger = (number) => Math.floor(number);
  * 5.1  => 6
  * -5.9 => -5
  */
-const roundToLargestInteger = (number) => Math.ceil(number);
+function roundToLargestInteger(number) {
+  return Math.ceil(number);
+}
 
 /**
  * Returns the value of a number rounded to the nearest integer.
@@ -478,7 +516,9 @@ const roundToLargestInteger = (number) => Math.ceil(number);
  * 5.4  => 5
  * -5.5 => -5
  */
-const roundToNearestInteger = (number) => Math.round(number);
+function roundToNearestInteger(number) {
+  return Math.round(number);
+}
 
 /**
  * Returns the integer part of a number by removing any fractional digits.
@@ -492,7 +532,9 @@ const roundToNearestInteger = (number) => Math.round(number);
  * -5.5 => -5
  */
 // const getIntegerPartNumber = (number) => ~~number; // Better solution but ESLint
-const getIntegerPartNumber = (number) => number.toPrecision(1);
+function getIntegerPartNumber(number) {
+  return number.toPrecision(1);
+}
 
 /**
  * Returns the sum of numbers.
