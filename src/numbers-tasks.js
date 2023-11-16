@@ -360,9 +360,7 @@ const toFixed = (number, fractionDigits) => number.toFixed(fractionDigits);
  * 12345, 7    => '12345.00'
  * 12.345, 4   => '12.35'
  */
-function toPrecision(/* number, precision */) {
-  throw new Error('Not implemented');
-}
+const toPrecision = (number, precision) => number.toPrecision(precision);
 
 /**
  * Returns the primitive value of a Number object.
@@ -374,9 +372,7 @@ function toPrecision(/* number, precision */) {
  * new Number(5) => 5
  * Number(-5)    => -5
  */
-function getNumberValue(/* number */) {
-  throw new Error('Not implemented');
-}
+const getNumberValue = (number) => number.valueOf();
 
 /**
  * Returns a boolean value indicating whether the parameter is a number or not.
@@ -408,9 +404,7 @@ function isNumber(/* number */) {
  * 5.1  => false
  * '5'  => false
  */
-function isInteger(/* number */) {
-  throw new Error('Not implemented');
-}
+const isInteger = (number) => Number.isInteger(number);
 
 /**
  * Returns a floating point number or, if the number cannot be parsed from the argument, returns NaN.
@@ -422,9 +416,7 @@ function isInteger(/* number */) {
  * '4.567abcdefgh' => 4.567
  * 'abcdefgh'      => NaN
  */
-function getFloatOnString(/* str */) {
-  throw new Error('Not implemented');
-}
+const getFloatOnString = (str) => Number.parseFloat(str);
 
 /**
  * Returns an integer of the specified base or, if the number cannot be parsed
@@ -440,9 +432,7 @@ function getFloatOnString(/* str */) {
  * '1.234', 2           => 1
  * '10', 8              => 8
  */
-function getIntegerOnString(/* str, base */) {
-  throw new Error('Not implemented');
-}
+const getIntegerOnString = (str, base) => Number.parseInt(str, base);
 
 /**
  * Returns whether a number is a safe integer.
@@ -455,9 +445,7 @@ function getIntegerOnString(/* str, base */) {
  * 3.5      => false
  * 2 ** 53  => false
  */
-function isSafeInteger(/* number */) {
-  throw new Error('Not implemented');
-}
+const isSafeInteger = (number) => Number.isSafeInteger(number);
 
 /**
  * Returns the smallest integer less than or equal to a given number.
@@ -469,9 +457,7 @@ function isSafeInteger(/* number */) {
  * 5.9  => 5
  * -5.1 => -6
  */
-function roundToSmallestInteger(/* number */) {
-  throw new Error('Not implemented');
-}
+const roundToSmallestInteger = (number) => Math.floor(number);
 
 /**
  * Returns the largest integer greater than or equal to a given number.
@@ -483,9 +469,7 @@ function roundToSmallestInteger(/* number */) {
  * 5.1  => 6
  * -5.9 => -5
  */
-function roundToLargestInteger(/* number */) {
-  throw new Error('Not implemented');
-}
+const roundToLargestInteger = (number) => Math.ceil(number);
 
 /**
  * Returns the value of a number rounded to the nearest integer.
@@ -498,9 +482,7 @@ function roundToLargestInteger(/* number */) {
  * 5.4  => 5
  * -5.5 => -5
  */
-function roundToNearestInteger(/* number */) {
-  throw new Error('Not implemented');
-}
+const roundToNearestInteger = (number) => Math.round(number);
 
 /**
  * Returns the integer part of a number by removing any fractional digits.
@@ -513,9 +495,8 @@ function roundToNearestInteger(/* number */) {
  * 5.4  => 5
  * -5.5 => -5
  */
-function getIntegerPartNumber(/* number */) {
-  throw new Error('Not implemented');
-}
+// const getIntegerPartNumber = (number) => ~~number; // Better solution but ESLint
+const getIntegerPartNumber = (number) => number.toPrecision(1);
 
 /**
  * Returns the sum of numbers.
