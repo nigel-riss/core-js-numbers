@@ -45,11 +45,7 @@ const getCircleCircumference = (radius) => 2 * Math.PI * radius;
  *  10, 0  => 5
  *  -3, 3  => 0
  */
-const getAverage = (/* value1, value2 */) => {
-  throw new Error('Not implemented');
-  // const sum = value1 + value2;
-  // return sum === 0 ? 0 : sum / 2;
-};
+const getAverage = (value1, value2) => value1 / 2 + value2 / 2;
 
 /**
  * Returns a distance between two points by cartesian coordinates.
@@ -66,9 +62,8 @@ const getAverage = (/* value1, value2 */) => {
  *   (0,0) (1,0)    => 1
  *   (-5,0) (10,-10) => 18.027756377319946
  */
-function getDistanceBetweenPoints(/* x1, y1, x2, y2 */) {
-  throw new Error('Not implemented');
-}
+const getDistanceBetweenPoints = (x1, y1, x2, y2) =>
+  Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
 
 /**
  * Returns a root of linear equation a*x + b = 0 given by coefficients a and b.
@@ -82,9 +77,7 @@ function getDistanceBetweenPoints(/* x1, y1, x2, y2 */) {
  *   x + 8 = 0       => -8
  *   5*x = 0         => 0
  */
-function getLinearEquationRoot(/* a, b */) {
-  throw new Error('Not implemented');
-}
+const getLinearEquationRoot = (a, b) => -b / a;
 
 /**
  * Returns an angle (in radians) between two vectors given by xi and yi,
@@ -103,9 +96,11 @@ function getLinearEquationRoot(/* a, b */) {
  *   (0,-1) (1,0)    => π/2
  *   (0,1) (0,1)     => 0
  */
-function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
-  throw new Error('Not implemented');
-}
+const getAngleBetweenVectors = (x1, y1, x2, y2) => {
+  const v1Angle = Math.atan2(y1, x1);
+  const v2Angle = Math.atan2(y2, x2);
+  return Math.abs(v1Angle - v2Angle);
+};
 
 /**
  * Returns a last digit of a integer number.
@@ -120,6 +115,7 @@ function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
  *     5     => 5
  *     0     => 0
  */
+// const getLastDigit = (value) => value % 10; // <- This is an optimal solution
 const getLastDigit = (value) => value % 10;
 
 /**
@@ -573,9 +569,7 @@ function getHypotenuse(/* a, b */) {
  * 10 => 5
  * 15 => 8
  */
-function getCountOfOddNumbers(/* number */) {
-  throw new Error('Not implemented');
-}
+const getCountOfOddNumbers = (number) => Math.abs(Math.ceil(number / 2));
 
 module.exports = {
   getRectangleArea,
